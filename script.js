@@ -153,7 +153,7 @@ async function scanWithAI() {
     ...uploadedImages.map(img=>({type:'image',source:{type:'base64',media_type:img.type,data:img.base64}}))
   ];
   try {
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content}]})});
+    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content}]})});
     const data=await res.json();
     const raw=data.content?.find(b=>b.type==='text')?.text||'';
     const parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());
