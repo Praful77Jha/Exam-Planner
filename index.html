@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">
+  <div class="toggle-thumb" id="toggleThumb">
+    <span id="toggleIcon">☀️</span>
+  </div>
+</button>
+
+<!-- WIZARD -->
+<div id="wizard">
+  <div class="wizard-header">
+    <div class="logo-badge">📚 Exam Planner</div>
+    <h1>Study smarter,<br><span>not harder.</span></h1>
+    <p>Build your personalized study plan in 4 quick steps</p>
+  </div>
+  <div class="step-indicator" id="stepDots"></div>
+
+  <!-- Step 1 -->
+  <div class="step active" id="step1">
+    <div class="step-label">Step 1 of 4</div>
+    <div class="step-question">When do your exams start? 📅</div>
+    <input type="date" class="input-field" id="examDate">
+    <p class="input-hint">Approximate date is fine — we'll calculate your full prep window.</p>
+    <p class="error-msg" id="err1">Please select a valid future date.</p>
+    <button class="btn-primary" onclick="goStep(2)">Continue →</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="step2">
+    <div class="step-label">Step 2 of 4</div>
+    <div class="step-question">How many hours can you study daily? ⏱</div>
+    <div class="option-grid" id="hoursOptions">
+      <button class="option-btn" onclick="selectHours(this,'1–2 hrs')">1–2 hours</button>
+      <button class="option-btn" onclick="selectHours(this,'2–3 hrs')">2–3 hours</button>
+      <button class="option-btn" onclick="selectHours(this,'3–4 hrs')">3–4 hours</button>
+      <button class="option-btn" onclick="selectHours(this,'4–5 hrs')">4–5 hours</button>
+      <button class="option-btn" onclick="selectHours(this,'5+ hrs')">5+ hours</button>
+    </div>
+    <p class="error-msg" id="err2">Please select your daily study hours.</p>
+    <button class="btn-primary" onclick="goStep(3)">Continue →</button>
+    <button class="btn-secondary" onclick="goStep(1)">← Back</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="step3">
+    <div class="step-label">Step 3 of 4</div>
+    <div class="step-question">Which subjects are you studying? 📖</div>
+    <div class="subject-list" id="subjectList"></div>
+    <div class="add-subject-row">
+      <input type="text" class="input-field" id="subjectInput" placeholder="Add a subject..." onkeydown="if(event.key==='Enter')addSubject()">
+      <button class="btn-primary" style="width:auto;margin-top:0;padding:0 20px;" onclick="addSubject()">+ Add</button>
+    </div>
+    <p class="input-hint">Rate each subject: Weak = more prep time, Strong = less time needed.</p>
+    <p class="error-msg" id="err3">Please add at least one subject.</p>
+    <button class="btn-primary" onclick="goStep(4)">Continue →</button>
+    <button class="btn-secondary" onclick="goStep(2)">← Back</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="step4">
+    <div class="step-label">Step 4 of 4</div>
+    <div class="step-question">Add topics for each subject 📝</div>
+
+    <div class="scan-section">
+      <div class="scan-section-label">📸 AI Syllabus Scanner</div>
+      <div class="scan-upload-area" onclick="document.getElementById('syllabusUpload').click()">
+        <input type="file" id="syllabusUpload" accept="image/*" multiple onchange="handleImages(event)">
+        <div class="scan-icon">📷</div>
+        <div class="scan-title">Upload your syllabus photo(s)</div>
+        <div class="scan-desc">AI will read and extract all topics automatically</div>
+        <div class="scan-preview" id="scanPreview"></div>
+      </div>
+      <button class="btn-scan" id="btnScan" onclick="scanWithAI()">✦ Extract Topics with AI</button>
+      <div class="scan-status" id="scanStatus"></div>
+    </div>
+
+    <div class="divider">or add manually below</div>
+
+    <div class="topics-builder" id="topicsBuilder"></div>
+    <p class="input-hint" style="margin-top:10px;">At least 1 topic per subject is required to generate your plan.</p>
+    <p class="error-msg" id="err4">Please add at least 1 topic for every subject.</p>
+    <button class="btn-primary" onclick="generatePlan()">🚀 Generate My Study Plan</button>
+    <button class="btn-secondary" onclick="goStep(3)">← Back</button>
+  </div>
+</div>
+
+<!-- TRACKER -->
+<div id="tracker">
+  <div class="tracker-header">
+    <h1>📚 My Study Tracker</h1>
+    <p id="trackerSub"></p>
+  </div>
+  <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px;">
+  <button class="reset-btn" style="margin:0;" onclick="editPlan()">✏️ Edit Plan</button>
+  <button class="reset-btn" style="margin:0;" onclick="resetAll()">↺ Reset</button>
+</div>
+  <div class="today-banner">
+    <div class="pulse"></div>
+    <div class="banner-text" id="bannerText">Loading...</div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Overall Progress</span><span id="progressLabel">0 / 0</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  </div>
+  <div class="days-list" id="daysList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
