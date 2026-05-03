@@ -1,10 +1,11 @@
-import fetch from 'node-fetch';
 export default async function handler(req, res) {
   const { messages } = req.body;
   const content = messages[0].content;
   
   const parts = Array.isArray(content) 
-    ? content.map(c => c.type === 'text' ? { text: c.text } : { inline_data: { mime_type: c.source.media_type, data: c.source.data }})
+    ? content.map(c => c.type === 'text' 
+        ? { text: c.text } 
+        : { inline_data: { mime_type: c.source.media_type, data: c.source.data }})
     : [{ text: content }];
 
   const response = await fetch(
