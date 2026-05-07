@@ -98,8 +98,6 @@ Click on **Generate My Plan** and your personalized day-by-day study tracker is 
 ## 🔗 Links
 
 - GitHub: https://github.com/Praful77Jha
-- Live Site: https://praful77jha.github.io/
-
 ---
 
 Built to solve a real problem — staying organized before exams 🚀
