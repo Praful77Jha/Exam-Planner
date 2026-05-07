@@ -40,11 +40,34 @@ Exam Planner is a smart web app that helps students organize their exam prep by 
 ### 🏠 Home Screen
 ![Home](assets/images/home.png)
 
-### 📚 Subject Planner
-![Planner](assets/images/planner.png)
+### 📚 Subject Planner — How It Works
+
+The subject planner walks you through 4 steps to build your personalized study roadmap.
+
+### Step 1 — Choose Your Exam Date
+Pick the date your exam starts. The planner uses this to calculate how many days you have left and builds your schedule around it.
+
+![Step 1](assets/images/Step1.png)
+
+### Step 2 — Set Your Daily Study Hours
+Enter how many hours per day you can realistically study. This helps the planner distribute subjects evenly across your available time.
+
+![Step 2](assets/images/Step2.png)
+
+### Step 3 — Add Your Subjects
+Add all the subjects you're studying. For each subject, mark it as **Weak**, **Mid**, or **Strong** so the planner knows how much time to allocate to each.
+
+![Step 3](assets/images/Step3.png)
+
+### Step 4 — Add Topics for Each Subject
+Add topics manually for each subject. *(The AI Syllabus Scanner is currently unavailable — see Known Issues below.)*
+
+![Step 4](assets/images/Step4.png)
 
 ### 📈 Progress Tracker
-![Progress](assets/images/progress.png)
+Click on **Generate My Plan** and your personalized day-by-day study tracker is ready. It shows your overall progress, today's task, and a full schedule broken down by subject and date. Mark topics as complete by clicking the checkbox — the tracker updates your progress in real time.
+
+![Progress Tracker](assets/images/progress.png)
 
 ---
 
@@ -75,6 +98,7 @@ Exam Planner is a smart web app that helps students organize their exam prep by 
 ## 🔗 Links
 
 - GitHub: https://github.com/Praful77Jha
+- Live Site: https://praful77jha.github.io/
 
 ---
 
