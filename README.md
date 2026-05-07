@@ -75,7 +75,7 @@ Exam Planner is a smart web app that helps students organize their exam prep by 
 ## 🔗 Links
 
 - GitHub: https://github.com/Praful77Jha
-- Live Site: exam-planner-blush.vercel.app/
+- Live Site: exam-planner-blush.vercel.app
 
 ---
 
