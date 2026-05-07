@@ -6,8 +6,7 @@ A personalized study schedule generator that helps students plan their exam prep
 
 ## 🚀 Live Demo
 
-👉 https://praful77jha.github.io/
-
+👉 https://praful77jha.github.io/Exam-Planner/
 ---
 
 ## 🧑‍💻 About
