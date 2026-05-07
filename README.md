@@ -1,29 +1,82 @@
-# 📚 Exam Planner
+# 📅 Exam Planner
 
-A personalized study planner that helps students build a structured exam preparation schedule based on their subjects, topics, and available study time.
+A personalized study schedule generator that helps students plan their exam preparation based on subjects, difficulty level, and available study time.
 
-## Features
+---
 
-- **4-Step Wizard** — Set exam date, daily study hours, subjects, and topics in a simple guided flow
-- **Subject Difficulty Rating** — Mark each subject as Weak, Mid, or Strong to auto-allocate more prep time where needed
-- **AI Syllabus Scanner** — Upload a photo of your syllabus and AI automatically extracts topics for each subject
-- **Smart Study Plan Generator** — Automatically builds a day-by-day study plan with revision days included
-- **Progress Tracker** — Track completed topics, see overall progress, and know exactly what to study today
-- **Edit Plan** — Edit your exam date, subjects, topics, and study hours even after the plan is generated
-- **Dark / Light Mode** — Toggle between themes
-- **Data Persistence** — Your plan and progress are saved locally in the browser
+## 🚀 Live Demo
 
-## Tech Stack
+👉 https://praful77jha.github.io/
 
-- HTML, CSS, JavaScript (Vanilla)
-- Hosted on Vercel
-- AI feature powered by Google Gemini API (via Vercel serverless function)
+---
 
-## Known Issues
+## 🧑‍💻 About
 
-- **AI Syllabus Scanner** — The AI topic extraction feature is currently not working as expected. The Gemini API is returning empty responses for image inputs. The `/api/claude` serverless function is deployed and receiving requests successfully (HTTP 200), but Gemini is returning a 429 (rate limit) or empty text response. This is being investigated. As a workaround, topics can be added manually.
+Exam Planner is a smart web app that helps students organize their exam prep by generating a day-by-day study roadmap. Students can add subjects, set difficulty levels, and input available study hours — the app handles the rest.
 
-## Author
+---
 
-**Praful Jha**  
-GitHub: [Praful77Jha](https://github.com/Praful77Jha)
+## ✨ Features
+
+- Add subjects with custom difficulty levels
+- Input available daily study time
+- Auto-generates a personalized study + revision roadmap
+- Tracks daily study progress
+- Local progress saving for seamless day-to-day planning
+- Fully responsive design
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+---
+
+## 📸 Preview
+
+### 🏠 Home Screen
+![Home](assets/images/home.png)
+
+### 📚 Subject Planner
+![Planner](assets/images/planner.png)
+
+### 📈 Progress Tracker
+![Progress](assets/images/progress.png)
+
+---
+
+## 🐛 Known Issues
+
+- **AI Syllabus Scanner** — The AI topic extraction feature is currently not working as expected. The Gemini API is returning empty responses for image inputs. The `/api/claude` serverless function is deployed and receiving requests successfully (HTTP 200), but Gemini is returning a `429` (rate limit) or empty text response. This is being investigated. As a workaround, topics can be added manually.
+
+---
+
+## 🔮 Future Plans
+
+- **User Login & Cloud Storage** — Planning to add user authentication so progress and study plans can be saved to the cloud instead of just locally. This will allow students to access their planner from any device.
+- Fix AI Syllabus Scanner and make Gemini API integration stable
+- Add notifications/reminders for daily study goals
+- Export study plan as PDF
+
+---
+
+## 📚 What I Learned
+
+- Building practical productivity tools with vanilla JS
+- Working with `localStorage` for persistent data
+- Dynamic DOM manipulation
+- Designing intuitive user interfaces
+
+---
+
+## 🔗 Links
+
+- GitHub: https://github.com/Praful77Jha
+- Live Site: https://praful77jha.github.io/
+
+---
+
+Built to solve a real problem — staying organized before exams 🚀
